@@ -43,10 +43,8 @@ def evaluateAnswer( userGuess, userSecretNumber ):
     
     if userGuess < userSecretNumber:
         print('Your guess is too low')
-        print('')
     elif userGuess > userSecretNumber:
         print('Your guess is too high')
-        print('')
     else:
         return True
 # end of evaluateAnswer function -------------------------------------
@@ -61,27 +59,20 @@ def evaluateAnswer( userGuess, userSecretNumber ):
 def playGame( showAnswer ):
 
     print('Hello there!')
-    print('')
     print('What is the highest number you would like to guess?')
     userTopLimit = int(input())
-    print('')
     print('How many guesses would you like to take?')
     totalGuesses = int(input())
     theNumber = generateNumber(userTopLimit)
-    print('')
     print('Please guess between 1 and ' + str(userTopLimit))
-    print('')
     print('You have ' + str(totalGuesses) + ' tries to guess the number')
-    print('')
     
     # this if statement allows us to show the hidden number to the user
     if( showAnswer == True ):
         print('--shhh, the real number is ' + str(theNumber) + '.')
-        print('')
     
     #this gives a sucess/fail message if the user guessed correctly in the allotted attempts
     if askUserToGuess(totalGuesses,theNumber) == True:
-        print('')
         print('Good job! You guessed my number!')
     else:
         print('Nope. The number I was thinking of was ' + str(theNumber))
